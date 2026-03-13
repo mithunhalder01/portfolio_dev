@@ -1,0 +1,187 @@
+.projects { position: relative; overflow: hidden; }
+
+.projects-bg-accent {
+  position: absolute;
+  width: 500px; height: 500px;
+  left: -150px; top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(200,255,0,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Filters */
+.projects-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 32px 0 40px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  color: var(--c-muted);
+  background: transparent;
+  transition: all 0.2s var(--ease);
+}
+
+.filter-btn:hover {
+  color: var(--c-text);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.filter-btn.active {
+  background: var(--c-lime);
+  color: var(--c-bg);
+  border-color: var(--c-lime);
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+.project-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.card--lime:hover    { border-color: rgba(200,255,0,0.3);  box-shadow: 0 16px 40px rgba(200,255,0,0.08); }
+.card--cyan:hover    { border-color: rgba(0,229,255,0.3);  box-shadow: 0 16px 40px rgba(0,229,255,0.08); }
+.card--magenta:hover { border-color: rgba(255,45,120,0.3); box-shadow: 0 16px 40px rgba(255,45,120,0.08); }
+.card--orange:hover  { border-color: rgba(255,107,43,0.3); box-shadow: 0 16px 40px rgba(255,107,43,0.08); }
+.card--purple:hover  { border-color: rgba(155,93,255,0.3); box-shadow: 0 16px 40px rgba(155,93,255,0.08); }
+
+/* Header */
+.project-header {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 140px;
+  position: relative;
+}
+
+.header--lime    { background: rgba(200,255,0,0.08); }
+.header--cyan    { background: rgba(0,229,255,0.08); }
+.header--magenta { background: rgba(255,45,120,0.08); }
+.header--orange  { background: rgba(255,107,43,0.08); }
+.header--purple  { background: rgba(155,93,255,0.08); }
+
+.project-category {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.project-year {
+  position: absolute;
+  top: 28px; right: 28px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c-muted);
+}
+
+.project-header-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.1;
+  margin-top: auto;
+}
+
+/* Body */
+.project-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+}
+
+.project-desc {
+  font-size: 13.5px;
+  color: var(--c-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  padding: 3px 10px;
+  font-size: 11px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--c-muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--c-border);
+}
+
+.project-link {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s;
+}
+
+.link-demo {
+  padding: 7px 16px;
+  border-radius: var(--r-xl);
+}
+
+.demo--lime    { background: rgba(200,255,0,0.15); color: var(--c-lime); }
+.demo--cyan    { background: rgba(0,229,255,0.15); color: var(--c-cyan); }
+.demo--magenta { background: rgba(255,45,120,0.15); color: var(--c-magenta); }
+.demo--orange  { background: rgba(255,107,43,0.15); color: var(--c-orange); }
+.demo--purple  { background: rgba(155,93,255,0.15); color: var(--c-purple); }
+
+.link-github {
+  color: var(--c-muted);
+}
+
+.link-github:hover { color: var(--c-text); }
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}

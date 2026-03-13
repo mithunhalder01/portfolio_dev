@@ -1,0 +1,190 @@
+.testimonials { position: relative; }
+
+.testimonials-wrapper {
+  max-width: 760px;
+  margin: 48px auto 0;
+  position: relative;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  font-family: var(--font-display);
+  font-size: 160px;
+  font-weight: 800;
+  color: var(--c-lime);
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Stage */
+.testimonial-stage {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+}
+
+/* Card */
+.testimonial-card {
+  width: 100%;
+  padding: 40px 48px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+}
+
+.tcard--lime    { border-top: 3px solid var(--c-lime); }
+.tcard--cyan    { border-top: 3px solid var(--c-cyan); }
+.tcard--magenta { border-top: 3px solid var(--c-magenta); }
+.tcard--purple  { border-top: 3px solid var(--c-purple); }
+.tcard--orange  { border-top: 3px solid var(--c-orange); }
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.star {
+  color: var(--c-lime);
+  font-size: 16px;
+}
+
+.testimonial-quote {
+  font-size: 1.1rem;
+  color: var(--c-text);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 700;
+  flex-shrink: 0;
+}
+
+.avatar--lime    { background: rgba(200,255,0,0.15);  color: var(--c-lime); }
+.avatar--cyan    { background: rgba(0,229,255,0.15);  color: var(--c-cyan); }
+.avatar--magenta { background: rgba(255,45,120,0.15); color: var(--c-magenta); }
+.avatar--purple  { background: rgba(155,93,255,0.15); color: var(--c-purple); }
+.avatar--orange  { background: rgba(255,107,43,0.15); color: var(--c-orange); }
+
+.author-name {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  color: var(--c-text);
+}
+
+.author-role {
+  font-size: 13px;
+  color: var(--c-muted);
+  margin-top: 2px;
+}
+
+/* Controls */
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.ctrl-btn {
+  width: 44px; height: 44px;
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  color: var(--c-muted);
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s var(--ease);
+}
+
+.ctrl-btn:hover {
+  border-color: var(--c-lime);
+  color: var(--c-lime);
+  transform: scale(1.1);
+}
+
+.testimonial-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot-btn {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--c-border);
+  transition: all 0.3s var(--ease);
+}
+
+.dot-active {
+  background: var(--c-lime);
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* Mini row */
+.testimonial-mini-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.mini-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  transition: all 0.2s var(--ease);
+  cursor: pointer;
+}
+
+.mini-card:hover,
+.mini-card.mini-active {
+  border-color: rgba(200,255,0,0.3);
+  background: rgba(200,255,0,0.05);
+}
+
+.mini-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 700;
+}
+
+.mini-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--c-muted);
+  white-space: nowrap;
+}
+
+.mini-active .mini-name { color: var(--c-lime); }
+
+@media (max-width: 640px) {
+  .testimonial-card { padding: 28px 24px; }
+  .testimonial-mini-row { display: none; }
+  .quote-mark { font-size: 100px; }
+}
