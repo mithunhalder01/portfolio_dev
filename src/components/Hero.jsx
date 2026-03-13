@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
+import { Github, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 
 const floatingOrbs = [
   { size: 480, x: '70%', y: '-10%', color: '#9b5dff', delay: 0 },
-  { size: 320, x: '-5%', y: '40%',  color: '#ff2d78', delay: 0.5 },
-  { size: 260, x: '55%', y: '65%',  color: '#00e5ff', delay: 1 },
-  { size: 180, x: '20%', y: '10%',  color: '#c8ff00', delay: 1.5 },
+  { size: 320, x: '-5%', y: '40%', color: '#ff2d78', delay: 0.5 },
+  { size: 260, x: '55%', y: '65%', color: '#00e5ff', delay: 1 },
+  { size: 180, x: '20%', y: '10%', color: '#c8ff00', delay: 1.5 },
 ];
 
 const roles = ['Frontend Developer', 'React Specialist', 'UI Craftsman', 'Web Animator'];
@@ -40,7 +41,7 @@ export default function Hero() {
 
   const item = {
     hidden: { opacity: 0, y: 30 },
-    show:  { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } }
   };
 
   return (
@@ -52,10 +53,10 @@ export default function Hero() {
             key={i}
             className="orb"
             style={{
-              width:  orb.size,
+              width: orb.size,
               height: orb.size,
-              left:   orb.x,
-              top:    orb.y,
+              left: orb.x,
+              top: orb.y,
               background: orb.color,
               animationDelay: `${orb.delay}s`,
             }}
@@ -85,7 +86,7 @@ export default function Hero() {
             <span className="name-highlight">
               Mithun Halder
               <svg className="name-underline" viewBox="0 0 280 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M2 9C60 3 160 3 278 9" stroke="#c8ff00" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M2 9C60 3 160 3 278 9" stroke="#c8ff00" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </span>
           </motion.h1>
@@ -107,7 +108,7 @@ export default function Hero() {
           <motion.div className="hero-ctas" variants={item}>
             <a href="#projects" className="btn btn-primary">
               View My Work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
             </a>
             <a href="#contact" className="btn btn-outline">
               Let's Talk
@@ -115,13 +116,21 @@ export default function Hero() {
           </motion.div>
 
           {/* Social Links */}
+          {/* Social Links with Lucide Icons */}
           <motion.div className="hero-socials" variants={item}>
             {[
-              { label: 'GitHub',   href: 'https://github.com', icon: 'GH' },
-              { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'LI' },
-              { label: 'Twitter',  href: 'https://twitter.com', icon: 'TW' },
+              { label: 'GitHub', href: 'https://github.com/mithunhalder01', icon: <Github size={20} /> },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mithun-halder-946704362/', icon: <Linkedin size={20} /> },
+              { label: 'Instagram', href: 'https://www.instagram.com/mithun_webdev/', icon: <Instagram size={20} /> },
             ].map(s => (
-              <a key={s.label} href={s.href} className="social-link" target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+              <a
+                key={s.label}
+                href={s.href}
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+              >
                 <span className="social-icon">{s.icon}</span>
               </a>
             ))}
@@ -137,7 +146,7 @@ export default function Hero() {
         >
           <div className="avatar-ring">
             <div className="avatar-img">
-              <span>YN</span>
+              <img src="/image.png" alt="Mithun Halder" />
             </div>
           </div>
           {/* Floating stat cards */}

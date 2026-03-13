@@ -13,6 +13,33 @@ import Blog         from './components/Blog';
 import Contact      from './components/Contact';
 import Footer       from './components/Footer';
 
+function useTheme() {
+  const getInitial = () => {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: light)').matches 
+      ? 'light' : 'dark';
+  };
+  const [theme, setTheme] = useState(getInitial);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: light)');
+    const handler = (e) => {
+      if (!localStorage.getItem('theme'))
+        setTheme(e.matches ? 'light' : 'dark');
+    };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  return [theme, () => setTheme(t => t === 'dark' ? 'light' : 'dark')];
+}
+
 /* ── Loader ─────────────────────────────────────── */
 function Loader({ onDone }) {
   return (
@@ -78,6 +105,7 @@ function CustomCursor() {
 /* ── App ─────────────────────────────────────────── */
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, toggleTheme] = useTheme();
 
   return (
     <>
@@ -92,7 +120,7 @@ export default function App() {
           transition={{ duration: 0.4 }}
         >
           <CustomCursor />
-          <Navbar />
+          <Navbar theme={theme} onToggle={toggleTheme} />
           <main>
             <Hero />
             <About />

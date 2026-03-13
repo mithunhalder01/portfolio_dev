@@ -34,7 +34,9 @@ export default function About() {
         {/* Left: Image placeholder */}
         <motion.div className="about-visual" {...fadeUp(0)}>
           <div className="about-photo">
-            <div className="photo-placeholder">YN</div>
+            <div className="photo-placeholder">
+              <img src="/image.png" alt="Mithun Halder" className="about-image" />
+            </div>
           </div>
           <div className="about-facts">
             {facts.map((f, i) => (
@@ -84,8 +86,8 @@ export default function About() {
           </motion.div>
 
           <motion.div className="about-ctas" {...fadeUp(0.6)}>
-            <a href="/resume.pdf" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              Download CV ↓
+            <a href="https://www.linkedin.com/in/mithun-halder-946704362/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              View Profile ↓
             </a>
             <a href="#contact" className="btn btn-outline">
               Get in Touch

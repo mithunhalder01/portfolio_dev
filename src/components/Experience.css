@@ -156,7 +156,9 @@
 
 /* Mobile: single column */
 @media (max-width: 768px) {
-  .timeline-line { left: 16px; }
+  .timeline-line { 
+    left: 16px;
+  }
 
   .timeline-item,
   .timeline-item.right {
@@ -164,6 +166,7 @@
     padding-left: 48px;
     padding-right: 0;
     margin-left: 0;
+    margin-bottom: 40px;
     justify-content: flex-start;
   }
 
@@ -171,6 +174,6 @@
   .timeline-item.right .timeline-dot {
     left: 8px;
     right: auto;
-    top: 20px;
+    top: 24px;
   }
 }

@@ -153,12 +153,11 @@
   border-color: rgba(200,255,0,0.3);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  .footer-brand { grid-column: 1 / -1; }
 }
 
 @media (max-width: 560px) {

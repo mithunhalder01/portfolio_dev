@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Footer.css';
+import { Github, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 
 const footerLinks = [
   { label: 'About',      href: '#about' },
@@ -10,9 +11,9 @@ const footerLinks = [
 ];
 
 const socials = [
-  { label: 'GH', href: 'https://github.com',   title: 'GitHub' },
-  { label: 'LI', href: 'https://linkedin.com', title: 'LinkedIn' },
-  { label: 'TW', href: 'https://twitter.com',  title: 'Twitter' },
+  { label: <Github size={20} />, href: 'https://github.com/mithunhalder01',   title: 'GitHub' },
+  { label: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/mithun-halder-946704362/', title: 'LinkedIn' },
+  { label: <Instagram size={20} />, href: 'https://www.instagram.com/mithun_webdev/',  title: 'Instagram' },
 ];
 
 export default function Footer() {

@@ -11,7 +11,44 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar() {
+function ThemeToggle({ theme, onToggle }) {
+  return (
+    <motion.button
+      className="theme-toggle"
+      onClick={onToggle}
+      whileTap={{ scale: 0.88 }}
+      aria-label="Toggle theme"
+    >
+      <AnimatePresence mode="wait">
+        {theme === 'dark' ? (
+          <motion.span 
+            key="sun"
+            initial={{ rotate: -90, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            exit={{ rotate: 90, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            style={{ fontSize: 16 }}
+          >
+            ☀
+          </motion.span>
+        ) : (
+          <motion.span 
+            key="moon"
+            initial={{ rotate: 90, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            exit={{ rotate: -90, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            style={{ fontSize: 16 }}
+          >
+            ☾
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.button>
+  );
+}
+
+export default function Navbar({ theme, onToggle }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
@@ -32,11 +69,11 @@ export default function Navbar() {
       <div className="nav-inner container">
         {/* Logo */}
         <a href="#hero" className="nav-logo">
-          <span className="logo-bracket">&lt;</span>
+          <span className="logo-bracket">{'<'}</span>
           dev
           <span className="logo-dot">.</span>
           <span className="logo-name">Mithun Halder</span>
-          <span className="logo-bracket">/&gt;</span>
+          <span className="logo-bracket">{'/>'}</span>
         </a>
 
         {/* Desktop Links */}
@@ -59,9 +96,12 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Theme Toggle */}
+        <ThemeToggle theme={theme} onToggle={onToggle} />
+
         {/* CTA */}
         <motion.a
-          href="/resume.pdf"
+          href="https://www.linkedin.com/in/mithun-halder-946704362/"
           className="nav-cta btn btn-primary"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -69,7 +109,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Resume ↗
+          View Profile ↗
         </motion.a>
 
         {/* Hamburger */}
@@ -78,7 +118,9 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
@@ -102,18 +144,19 @@ export default function Navbar() {
                 transition={{ delay: i * 0.06 }}
                 onClick={() => setMenuOpen(false)}
               >
-                <span className="mobile-link-num">0{i + 1}</span>
+                <span className="mobile-link-num">0{i + 1}.</span>
                 {link.label}
               </motion.a>
             ))}
+            <ThemeToggle theme={theme} onToggle={onToggle} />
             <motion.a
-              href="/resume.pdf"
+              href="https://www.linkedin.com/in/mithun-halder-946704362/"
               className="mobile-cta btn btn-primary"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Download Resume ↗
+              View Profile ↗
             </motion.a>
           </motion.div>
         )}
@@ -121,3 +164,4 @@ export default function Navbar() {
     </motion.nav>
   );
 }
+

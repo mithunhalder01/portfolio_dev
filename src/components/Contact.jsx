@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion';
 import './Contact.css';
 
 const socials = [
-  { label: 'GitHub',    handle: '@mithunhalder01',      href: 'https://github.com/mithunhalder01',    color: 'lime' },
-  { label: 'LinkedIn',  handle: 'mithunhaldermithun-halder-946704362',        href: 'https://www.linkedin.com/in/mithun-halder-946704362/',  color: 'cyan' },
-  { label: 'Instagram',   handle: '@mithun_webdev',       href: 'https://www.instagram.com/mithun_webdev/',   color: 'magenta' },
-  { label: 'Email',     handle: 'mithunhalder.dev@gmail.com',   href: 'mailto:mithunhalder.dev@gmail.com',  color: 'purple' },
+  { label: 'GitHub', handle: '@mithunhalder01', href: 'https://github.com/mithunhalder01', color: 'lime' },
+  { label: 'LinkedIn', handle: 'mithun-halder-946704362', href: 'https://www.linkedin.com/in/mithun-halder-946704362/', color: 'cyan' },
+  { label: 'Instagram', handle: '@mithun_webdev', href: 'https://www.instagram.com/mithun_webdev/', color: 'magenta' },
+  { label: 'Email', handle: 'mithunhalder.dev@gmail.com', href: 'mailto:mithunhalder.dev@gmail.com', color: 'purple' },
 ];
 
 export default function Contact() {
@@ -100,13 +100,13 @@ export default function Contact() {
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
               <div className="form-row">
                 <div className="form-group">
-                  <label className="form-label" htmlFor="name">Mithun Halder</label>
+                  <label className="form-label" htmlFor="name">Your Name</label>
                   <input
                     id="name"
                     name="name"
                     type="text"
                     className="form-input"
-                    placeholder="Rahul Kumar"
+                    placeholder="e.g. Rahul Kumar"
                     value={form.name}
                     onChange={handleChange}
                     required
