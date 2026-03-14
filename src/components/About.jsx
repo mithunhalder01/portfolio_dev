@@ -2,13 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Coffee, Gamepad2, Globe, BookOpen } from 'lucide-react';
 import './About.css';
 
 const facts = [
-  { emoji: '☕', text: 'Coffee-fueled coder' },
-  { emoji: '🎮', text: 'Gamer in spare time' },
-  { emoji: '🌏', text: 'Open to remote work' },
-  { emoji: '📚', text: 'Always learning' },
+  { icon: Coffee, text: 'Coffee-fueled coder' },
+  { icon: Gamepad2, text: 'Gamer in spare time' },
+  { icon: Globe, text: 'Open to remote work' },
+  { icon: BookOpen, text: 'Always learning' },
 ];
 
 const stats = [
@@ -45,7 +46,7 @@ export default function About() {
                 className="fact-pill"
                 {...fadeUp(0.15 * i + 0.3)}
               >
-                <span>{f.emoji}</span>
+                <f.icon size={20} />
                 <span>{f.text}</span>
               </motion.div>
             ))}
@@ -86,8 +87,8 @@ export default function About() {
           </motion.div>
 
           <motion.div className="about-ctas" {...fadeUp(0.6)}>
-            <a href="https://www.linkedin.com/in/mithun-halder-946704362/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              View Profile ↓
+            <a href="/Resume.pdf" className="btn btn-primary" download="Resume.pdf">
+              Download CV
             </a>
             <a href="#contact" className="btn btn-outline">
               Get in Touch

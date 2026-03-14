@@ -99,17 +99,16 @@ export default function Navbar({ theme, onToggle }) {
         {/* Theme Toggle */}
         <ThemeToggle theme={theme} onToggle={onToggle} />
 
-        {/* CTA */}
+        {/* CTA - Download CV */}
         <motion.a
-          href="https://www.linkedin.com/in/mithun-halder-946704362/"
+          href="/Resume.pdf"
+          download="Mithun_Halder_Resume.pdf"
           className="nav-cta btn btn-primary"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8 }}
-          target="_blank"
-          rel="noopener noreferrer"
         >
-          View Profile ↗
+          Download CV ↓
         </motion.a>
 
         {/* Hamburger */}
@@ -150,13 +149,15 @@ export default function Navbar({ theme, onToggle }) {
             ))}
             <ThemeToggle theme={theme} onToggle={onToggle} />
             <motion.a
-              href="https://www.linkedin.com/in/mithun-halder-946704362/"
+              href="/Resume.pdf"
+              download="Mithun_Halder_Resume.pdf"
               className="mobile-cta btn btn-primary"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
+              onClick={() => setMenuOpen(false)}
             >
-              View Profile ↗
+              Download CV ↓
             </motion.a>
           </motion.div>
         )}
@@ -164,4 +165,3 @@ export default function Navbar({ theme, onToggle }) {
     </motion.nav>
   );
 }
-
