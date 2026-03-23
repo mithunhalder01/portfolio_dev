@@ -11,7 +11,7 @@ const projects = [
     year:     '2024',
     desc:     'Modern animated portfolio built with React, Framer Motion, and CSS Grid. Fully responsive with theme toggle.',
     tags:     ['React', 'Framer Motion', 'CSS Grid', 'JavaScript'],
-    demo:     'https://mithunhalder01.github.io/portfolio',
+    demo:     'https://get-fit-n-fine-gym.vercel.app/',
     github:   'https://github.com/mithunhalder01/portfolio',
   },
   {
