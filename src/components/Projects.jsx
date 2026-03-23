@@ -5,7 +5,7 @@ import './Projects.css';
 const projects = [
   {
     id: 1,
-    title:    'Portfolio 2024',
+    title:    'hello',
     category: 'Web App',
     color:    'lime',
     year:     '2024',
